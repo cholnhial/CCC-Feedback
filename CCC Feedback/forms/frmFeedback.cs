@@ -61,6 +61,11 @@ namespace CCC__Feedback
             if (dialogResult == DialogResult.OK)
             {
                 string carrierName = frmNewCarrier.GetEnteredCarrierName();
+                if(String.IsNullOrWhiteSpace(carrierName))
+                {
+                    DisplayErrorMessage("Empty Carrier Name", "Please enter a valid carrier name, blank name is not acceptable.");
+                    return;
+                }
                 if (feedbackManager.CarrierExists(carrierName))
                 {
                     DisplayErrorMessage("Carrier Already Exists", "Please choose another carrier name.");

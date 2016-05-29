@@ -90,6 +90,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.panel1);
             this.Name = "frmNewCarrier";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add New Carrier";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
