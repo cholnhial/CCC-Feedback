@@ -164,6 +164,12 @@ namespace CCC__Feedback.classes
         {
             feedbacks = Feedback.GetEntries();
         }
+
+        public void CloseDB()
+        {
+            DatabaseAccess dbAccess = DatabaseAccess.Instance;
+            dbAccess.Close();
+        }
         #endregion methods
     }
 }

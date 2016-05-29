@@ -46,6 +46,8 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cboCarriers = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtpDob = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,8 +55,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cboCarriers = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -247,6 +247,23 @@
             this.panel1.Size = new System.Drawing.Size(528, 334);
             this.panel1.TabIndex = 1;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(16, 95);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Carrier:";
+            // 
+            // cboCarriers
+            // 
+            this.cboCarriers.FormattingEnabled = true;
+            this.cboCarriers.Location = new System.Drawing.Point(62, 91);
+            this.cboCarriers.Name = "cboCarriers";
+            this.cboCarriers.Size = new System.Drawing.Size(121, 21);
+            this.cboCarriers.TabIndex = 12;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dtpDob);
@@ -311,23 +328,6 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "First Name:";
             // 
-            // cboCarriers
-            // 
-            this.cboCarriers.FormattingEnabled = true;
-            this.cboCarriers.Location = new System.Drawing.Point(62, 91);
-            this.cboCarriers.Name = "cboCarriers";
-            this.cboCarriers.Size = new System.Drawing.Size(121, 21);
-            this.cboCarriers.TabIndex = 12;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 95);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Carrier:";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -344,6 +344,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmMain";
             this.Text = "CCC Feedback";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

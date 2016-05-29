@@ -58,6 +58,12 @@ namespace CCC__Feedback
         #endregion init
 
         #region events
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            feedbackManager.CloseDB();
+
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmFeedback frm = new frmFeedback(feedbackManager);
