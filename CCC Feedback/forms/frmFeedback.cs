@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CCC__Feedback.classes;
+using CCC_Feedback.forms;
 using CCC_Feedback_DB;
 
 namespace CCC__Feedback
@@ -53,7 +54,38 @@ namespace CCC__Feedback
          
         }
 
+        private void btnNewCarrier_Click(object sender, EventArgs e)
+        {
+            frmNewCarrier frmNewCarrier = new frmNewCarrier();
+            DialogResult dialogResult = frmNewCarrier.ShowDialog(this);
+            if (dialogResult == DialogResult.OK)
+            {
+                string carrierName = frmNewCarrier.GetEnteredCarrierName();
+                if (feedbackManager.CarrierExists(carrierName))
+                {
+                    DisplayErrorMessage("Carrier Already Exists", "Please choose another carrier name.");
+                }
+                else
+                {
+                    Carrier newCarrier = new Carrier();
+                    newCarrier.name = carrierName;
+                    feedbackManager.SaveCarrier(newCarrier);
+                    InitializeCarriersComboBox();
+                }
+            }
+        }
+
         #region methods
+        private void DisplayErrorMessage(string title, string msg)
+        {
+            MessageBox.Show(this, msg, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void DisplayInformationMessage(string title, string msg)
+        {
+            MessageBox.Show(this, msg, title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         public Feedback GetEnteredFeedback()
         {
             return enteredFeedback;
@@ -66,6 +98,7 @@ namespace CCC__Feedback
             cboCarriers.ValueMember = "CarrierID";
         }
         #endregion methods
+
 
     }
 }

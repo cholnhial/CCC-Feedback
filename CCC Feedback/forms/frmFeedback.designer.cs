@@ -30,6 +30,9 @@
         {
             this.btnCancel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnNewCarrier = new System.Windows.Forms.Button();
+            this.cboCarriers = new System.Windows.Forms.ComboBox();
             this.dtpDob = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
@@ -39,9 +42,6 @@
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnNewCarrier = new System.Windows.Forms.Button();
-            this.cboCarriers = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,6 +74,33 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(515, 237);
             this.panel1.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(7, 90);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Carrier:";
+            // 
+            // btnNewCarrier
+            // 
+            this.btnNewCarrier.Location = new System.Drawing.Point(180, 85);
+            this.btnNewCarrier.Name = "btnNewCarrier";
+            this.btnNewCarrier.Size = new System.Drawing.Size(75, 23);
+            this.btnNewCarrier.TabIndex = 21;
+            this.btnNewCarrier.Text = "New Carrier";
+            this.btnNewCarrier.UseVisualStyleBackColor = true;
+            this.btnNewCarrier.Click += new System.EventHandler(this.btnNewCarrier_Click);
+            // 
+            // cboCarriers
+            // 
+            this.cboCarriers.FormattingEnabled = true;
+            this.cboCarriers.Location = new System.Drawing.Point(53, 86);
+            this.cboCarriers.Name = "cboCarriers";
+            this.cboCarriers.Size = new System.Drawing.Size(121, 21);
+            this.cboCarriers.TabIndex = 20;
             // 
             // dtpDob
             // 
@@ -150,32 +177,6 @@
             this.btnAdd.Text = "&Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 90);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 13);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Carrier:";
-            // 
-            // btnNewCarrier
-            // 
-            this.btnNewCarrier.Location = new System.Drawing.Point(180, 85);
-            this.btnNewCarrier.Name = "btnNewCarrier";
-            this.btnNewCarrier.Size = new System.Drawing.Size(75, 23);
-            this.btnNewCarrier.TabIndex = 21;
-            this.btnNewCarrier.Text = "New Carrier";
-            this.btnNewCarrier.UseVisualStyleBackColor = true;
-            // 
-            // cboCarriers
-            // 
-            this.cboCarriers.FormattingEnabled = true;
-            this.cboCarriers.Location = new System.Drawing.Point(53, 86);
-            this.cboCarriers.Name = "cboCarriers";
-            this.cboCarriers.Size = new System.Drawing.Size(121, 21);
-            this.cboCarriers.TabIndex = 20;
             // 
             // frmFeedback
             // 

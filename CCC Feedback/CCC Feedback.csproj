@@ -60,6 +60,12 @@
     <Compile Include="forms\frmMain.designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\frmNewCarrier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmNewCarrier.Designer.cs">
+      <DependentUpon>frmNewCarrier.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frmSearch.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmNewCarrier.resx">
+      <DependentUpon>frmNewCarrier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmSearch.resx">
       <DependentUpon>frmSearch.cs</DependentUpon>

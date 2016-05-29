@@ -24,7 +24,28 @@ namespace CCC_Feedback_DB
         #endregion
 
         #region instance methods
-         
+         public void Save()
+        {
+            if(carrierID == 0)
+            {
+                carrierID = Insert();
+            } else
+            {
+                Update();
+            }
+        }
+
+        private int Insert()
+        {
+            DatabaseAccess dbAccess = DatabaseAccess.Instance;
+            return dbAccess.ExecuteNonQuery(String.Format(DatabaseStrings.CARRIER_INSERT, name));
+        }
+
+        private int Update()
+        {
+            DatabaseAccess dbAccess = DatabaseAccess.Instance;
+            return dbAccess.ExecuteNonQuery(String.Format(DatabaseStrings.CARRIER_UPDATE, name));
+        }
         #endregion
 
         #region static methods

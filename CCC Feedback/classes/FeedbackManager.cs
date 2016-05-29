@@ -17,7 +17,6 @@ namespace CCC__Feedback.classes
 
         #region vars
         private List<Feedback> feedbacks;
-        private List<Carrier> carriers;
         private DatabaseAccess dbAccess;
         #endregion vars
 
@@ -27,10 +26,8 @@ namespace CCC__Feedback.classes
         {
 
             feedbacks = new List<Feedback>(); // Empty feedback list
-            carriers = new List<Carrier>();
             dbAccess = DatabaseAccess.Instance;
             LoadFeedbacks();
-            //LoadCarriers();
         }
         #endregion init
 
@@ -65,10 +62,8 @@ namespace CCC__Feedback.classes
         }
 
         /// <summary>
-        ///  Serializes a new feedback object to afile that is timestamp using
-        ///  a format that can be found @Strings.OBJECT_FILENAME_FMT. When
-        ///  the file is saved the new feedback is added to the current running
-        ///  list.
+        ///  Save feedback to database and list
+        ///  
         /// </summary>
         /// <param name="feedback"></param>
         public void AddFeedback(Feedback feedback)
@@ -77,14 +72,19 @@ namespace CCC__Feedback.classes
             feedbacks.Add(feedback);
         }
 
+        /// <summary>
+        ///  Save feedback to database
+        /// </summary>
+        /// <param name="feedback"></param>
         public void SaveFeedback(Feedback feedback)
         {
             feedback.Save();
         }
 
+
         /// <summary>
         ///  Removes a feedback from the list and also deletes 
-        ///  its object file and refreshes the file which tracks the objects
+        ///  and also from the datbase
         /// </summary>
         /// <param name="feedbackIndex"></param>
         public void DeleteFeedback(int feedbackIndex)
@@ -93,6 +93,25 @@ namespace CCC__Feedback.classes
             {
                 feedbacks[feedbackIndex].Delete();
             }
+        }
+
+        /// <summary>
+        /// Saves a carrier to the database
+        /// </summary>
+        /// <param name="carrier"></param>
+        public void SaveCarrier(Carrier carrier)
+        {
+            carrier.Save();
+        }
+
+        /// <summary>
+        /// Checks wether a carrier exists already
+        /// </summary>
+        /// <param name="carrierName"></param>
+        /// <returns></returns>
+        public bool CarrierExists(string carrierName)
+        {
+            return Carrier.CarrierExists(carrierName);
         }
 
         /// <summary>
